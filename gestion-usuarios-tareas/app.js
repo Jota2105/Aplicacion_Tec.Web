@@ -1,7 +1,7 @@
 // MINIPROYECTO JAVASCRIPT
 
 // ------INTEGRANTES--------
-// * JUAN DIEGO ALBARRACIN HIDALGO
+// * JUAN DIEGO ALBARRACIN HIDALGO *
 
 
 
@@ -9,17 +9,17 @@
 let usuarios = [
     {
         id: 1,
-        nombre: "Ana",
+        nombre: "Juan",
         tareas: [
             { descripcion: "Estudiar JavaScript", estado: "pendiente", fecha: "2025-06-08" },
-            { descripcion: "Hacer ejercicio", estado: "completada", fecha: "2025-06-07" }
+            { descripcion: "Realizar Miniproyecto", estado: "completada", fecha: "2025-06-07" }
         ]
     },
     {
         id: 2,
         nombre: "Carlos",
         tareas: [
-            { descripcion: "Comprar víveres", estado: "pendiente", fecha: "2025-06-09" }
+            { descripcion: "Comprar utiles para el semestre", estado: "pendiente", fecha: "2025-06-09" }
         ] //Como se nos dio en el ejemplo, contiene su id, nombre, tareas y descripcion
     }
 ];
@@ -78,7 +78,7 @@ function verTareasUsuario() {
     let id = parseInt(prompt("Ingrese el ID del usuario:"));
     let usuario = buscarUsuarioPorId(id);
     
-    // Usamos for...in para mostrar propiedades del objeto usuario
+    // Usamos for in para mostrar propiedades del objeto usuario
     if (usuario) {
         console.log("\nInformación del usuario:");
         for (let prop in usuario) {
@@ -197,7 +197,7 @@ function iniciarPrograma() {
                 console.log("¡Hasta luego!");
                 break;
             default:
-                console.log("Opción no válida. Intente de nuevo.");
+                console.log("Opción no válida. Intente otra vez.");
         }
     } while (opcion !== "7");
 }
