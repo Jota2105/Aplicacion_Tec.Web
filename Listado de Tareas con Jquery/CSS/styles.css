@@ -36,5 +36,15 @@ body {
         }
         .completada {
             text-decoration: line-through;
-            color: gray;
+            color: rgb(97, 95, 95);
+        }
+                .editarInput {
+            padding: 5px;
+            margin-right: 5px;
+        }
+        #vaciarLista {
+            background-color: rgb(161, 28, 28);
+            color: white;
+            border: none;
+            margin-top: 10px;
         }

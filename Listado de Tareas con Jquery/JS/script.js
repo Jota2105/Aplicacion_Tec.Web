@@ -1,5 +1,5 @@
         $(document).ready(function() {
-            // Evento submit para agregar tareas
+            // Evento submit para agregar las tareas
             $("#formulario").submit(function(event) {
                 event.preventDefault();
                 let tareaTexto = $("#tareaInput").val().trim();
@@ -14,7 +14,7 @@
                     );
                     $("#tareaInput").val(""); // Limpiar el input
                     // Mostrar mensaje con un fadeIn
-                    $("#mensaje").fadeIn(500).delay(2000).fadeOut(500);
+                    $("#mensaje").fadeIn(500).delay(2000).fadeOut(400);
                 }
             });
 
@@ -34,12 +34,12 @@
             $(document).on("click", ".editar", function() {
                 let tareaSpan = $(this).siblings("span");
                 let textoActual = tareaSpan.text();
-                // Reemplazar el span que teniamos por input y botón de actualizar
+                // Reemplazar el span que teniamos por input y boton de actualizar
                 tareaSpan.replaceWith(
                     '<input type="text" class="editarInput" value="' + textoActual + '">' +
                     '<button class="actualizar">Actualizar</button>'
                 );
-                $(this).hide(); // Ocultamos el botón editar
+                $(this).hide(); // Ocultamos el boton editar
             });
 
             // Actualizamos las tareas individualmente con un evento click
@@ -47,19 +47,19 @@
                 let nuevoTexto = $(this).siblings(".editarInput").val().trim();
                 if (nuevoTexto !== "") {
                     let tareaDiv = $(this).parent(".tarea");
-                    // Reemplazar el input y botón actualizar por span
+                    // Reemplazar el input y boton actualizar por span
                     $(this).siblings(".editarInput").replaceWith('<span>' + nuevoTexto + '</span>');
                     $(this).siblings(".editar").show(); // Mostrar botón editar
                     $(this).remove(); // Eliminar botón actualizar
-                    // Mantenemos clase completada si es que existía
+                    // Mantenemos clase completada si es que ya existia
                     if (tareaDiv.find("span").hasClass("completada")) {
                         tareaDiv.find("span").addClass("completada");
                     }
                 }
             });
 
-            // Vaciamos la lista con un evento de click
-            $("#vaciarLista").click(function() {
+            // Vaciamos la lista con un evento de doble click
+            $("#vaciarLista").dblclick(function() {
                 $("#listaTareas").empty();
             });
         });
