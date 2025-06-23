@@ -1,4 +1,4 @@
-body {
+        .body {
             font-family: Arial, sans-serif;
             max-width: 600px;
             margin: 20px auto;
@@ -48,3 +48,15 @@ body {
             border: none;
             margin-top: 10px;
         }
+        
+        footer{
+            background-color: black;
+            color:rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position:fixed; 
+            bottom: 0;            
+            margin-left: 0;
+        }
+        
