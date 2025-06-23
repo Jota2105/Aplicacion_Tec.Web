@@ -1,0 +1,40 @@
+body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #formulario {
+            margin-bottom: 20px;
+        }
+        #tareaInput {
+            padding: 8px;
+            width: 70%;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        #mensaje {
+            color: green;
+            margin: 10px 0;
+            display: none;
+        }
+        .tarea {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .tarea span {
+            flex-grow: 1;
+            cursor: pointer;
+        }
+        .completada {
+            text-decoration: line-through;
+            color: gray;
+        }
