@@ -38,6 +38,26 @@ header('Content-Type: text/html; charset=UTF-8');
                 echo "<li><strong>Comentarios:</strong> " . htmlspecialchars($_POST['comentarios'] ?? 'No ingresado') . "</li>";
                 echo "<li><strong>Género:</strong> " . htmlspecialchars($_POST['sugenero'] ?? 'No seleccionado') . "</li>";
                 echo "<li><strong>Campo Oculto:</strong> " . htmlspecialchars($_POST['oculto'] ?? 'No ingresado') . "</li>";
+
+                //Manejamos las casillas de las preferencias del usuario con un blucle if
+                // El arreglo que realizamos en elk index nos servira para las casillas
+                echo "<li><strong>Intereses:</strong> ";
+                if (isset($_POST['casillas']) && is_array($_POST['casillas'])) {
+                    echo htmlspecialchars(implode(", ", $_POST['casillas']));
+                } else {
+                    echo "Ninguno seleccionado";
+                }
+                echo "</li>";
+
+                // Los archivos los podemos manejar con $_FILES, ya que nos muestra su nombre y si se subio o no
+                echo "<li><strong>Archivo:</strong> ";
+                if (isset($_FILES['docs']) && $_FILES['docs']['error'] === UPLOAD_ERR_OK) {
+                    echo htmlspecialchars($_FILES['docs']['name']) . " (Tamaño: " . $_FILES['docs']['size'] . " bytes)";
+                } else {
+                    echo "No se subió ningún archivo";
+                }
+                echo "</li>";
+                echo "</ul>";
                 
             } else  {
                 echo "<p class='text-danger'>No se ha recibido ningun dato.</p>";
