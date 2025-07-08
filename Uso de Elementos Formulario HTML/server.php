@@ -17,17 +17,33 @@ header('Content-Type: text/html; charset=UTF-8');
             // Aqui podemos iniciar con la verificacion si se recibieron o no los datos por POST
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Campos con el uso de listas para verlo organizado
-                echo "<h3>Datos Recibidos:</h3>";
+                // Hacemos uso de htmlspecialchars para mejorar la seguridad en cada dato
+                echo "<h3>Datos Recibidos:</h3>" ;
                 echo "<ul>";
                 echo "<li><strong>Texto:</strong> " . htmlspecialchars($_POST['textoo'] ?? 'No ingresado') . "</li>";
                 echo "<li><strong>Teléfono:</strong> " . htmlspecialchars($_POST['telefonoo'] ?? 'No ingresado') . "</li>";
                 echo "<li><strong>Correo Electrónico:</strong> " . htmlspecialchars($_POST['correo'] ?? 'No ingresado') . "</li>";
-
-            } else {
-                echo "<p class='text-danger'>No se recibieron datos.</p>";
+                echo "<li><strong>Fecha:</strong> " . htmlspecialchars($_POST['fechaa'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>Hora:</strong> " . htmlspecialchars($_POST['horaa'] ?? ' No ingresado') . "</li>";
+                echo "<li><strong>Fecha y Hora:</strong> " . htmlspecialchars($_POST['hyf'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>Mes:</strong> " . htmlspecialchars($_POST['meses'] ?? 'No ingresado') . "</li>" ;
+                echo "<li><strong>Semana:</strong> " . htmlspecialchars($_POST['semanaa'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>URL:</strong> " . htmlspecialchars($_POST['url'] ?? 'No ingresado') . "</li>" ;
+                echo "<li><strong>Número:</strong> " . htmlspecialchars($_POST['numerico'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>Rango:</strong> " . htmlspecialchars($_POST['rec'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>Color:</strong> " . htmlspecialchars($_POST['colores'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>Contraseña:</strong> " . htmlspecialchars($_POST['pass'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>Búsqueda:</strong> " . htmlspecialchars($_POST['searching'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>País:</strong> " . htmlspecialchars($_POST['supais'] ?? 'No seleccionado') . "</li>";
+                echo "<li><strong>Comentarios:</strong> " . htmlspecialchars($_POST['comentarios'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>Género:</strong> " . htmlspecialchars($_POST['sugenero'] ?? 'No seleccionado') . "</li>";
+                echo "<li><strong>Campo Oculto:</strong> " . htmlspecialchars($_POST['oculto'] ?? 'No ingresado') . "</li>";
+                
+            } else  {
+                echo "<p class='text-danger'>No se ha recibido ningun dato.</p>";
             }
             ?>
-            <a href="index.html" class="btn btn-primary mt-3">Regresar al formulario</a>
+            <a href ="index.html" class="btn btn-primary mt-3">Regresar al formulario</a>
         </div>
     </div>
 </body>
