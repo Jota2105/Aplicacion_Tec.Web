@@ -14,7 +14,7 @@ header('Content-Type: text/html; charset=UTF-8');
         <h1>Resultados del Formulario de Uso de HTML</h1>
         <div class="card p-4">
             <?php
-            // Aqui podemos iniciar con la verificacion si se recibieron o no los datos por POST
+            // Aqui podemos iniciar con la verificación si se recibieron o no los datos por POST
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Campos con el uso de listas para verlo organizado
                 // Hacemos uso de htmlspecialchars para mejorar la seguridad en cada dato
@@ -29,7 +29,7 @@ header('Content-Type: text/html; charset=UTF-8');
                 echo "<li><strong>Mes:</strong> " . htmlspecialchars($_POST['meses'] ?? 'No ingresado') . "</li>" ;
                 echo "<li><strong>Semana:</strong> " . htmlspecialchars($_POST['semanaa'] ?? 'No ingresado') . "</li>";
                 echo "<li><strong>URL:</strong> " . htmlspecialchars($_POST['url'] ?? 'No ingresado') . "</li>" ;
-                echo "<li><strong>Número:</strong> " . htmlspecialchars($_POST['numerico'] ?? 'No ingresado') . "</li>";
+                echo "<li><strong>Número:</strong> " . htmlspecialchars($_POST['numericoo'] ?? 'No ingresado') . "</li>";
                 echo "<li><strong>Rango:</strong> " . htmlspecialchars($_POST['rec'] ?? 'No ingresado') . "</li>";
                 echo "<li><strong>Color:</strong> " . htmlspecialchars($_POST['colores'] ?? 'No ingresado') . "</li>";
                 echo "<li><strong>Contraseña:</strong> " . htmlspecialchars($_POST['pass'] ?? 'No ingresado') . "</li>";
@@ -40,7 +40,7 @@ header('Content-Type: text/html; charset=UTF-8');
                 echo "<li><strong>Campo Oculto:</strong> " . htmlspecialchars($_POST['oculto'] ?? 'No ingresado') . "</li>";
 
                 //Manejamos las casillas de las preferencias del usuario con un blucle if
-                // El arreglo que realizamos en elk index nos servira para las casillas
+                // El arreglo que realizamos en el index nos servira para las casillas
                 echo "<li><strong>Intereses:</strong> ";
                 if (isset($_POST['casillas']) && is_array($_POST['casillas'])) {
                     echo htmlspecialchars(implode(", ", $_POST['casillas']));
