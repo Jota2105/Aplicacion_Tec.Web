@@ -10,7 +10,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Uso completo de Elementos de Formulario en HTML</h1>
-        <form>
+        <form action="server.php" method="POST" enctype="multipart/form-data">
         
             <div class="mb-3"> <!--Un campo de texto-->
                 <label for="textoo" class="form-label">TEXTO</label>
@@ -28,6 +28,137 @@
                 <input type="email" class="form-control" id="correo" name="correo " placeholder="Ponga su correo">
 
 
+            </div>
+            <div class= "mb-3"> <!--Campo de fecha-->
+                <label for=" fechaa" class=" form-label">Fecha</label>
+                <input type="date" class="form-control" id="fechaa" name="fechaa "  >
+
+
+            </div>
+            <div class= "mb-3"> <!--Hora-->
+                <label for=" horaa" class=" form-label">Hora</label>
+                <input type="time" class="form-control" id="horaa" name=" horaa" >
+
+
+            </div>
+            <div class= "mb-3 " > <!--Hora y fecha (local)-->
+                <label for=" hyf" class=" form-label">Hora y fecha local</label>
+                <input type="datetime-local" class="form-control" id="hyf" name=" hyf" >
+
+
+            </div>
+            <div class= "mb-3 "> <!--Campo de mes-->
+                <label for=" meses" class=" form-label">Mes</label>
+                <input type="month" class="form-control" id="meses" name=" meses" >
+
+
+            </div>
+            <div class= " mb-3"> <!--Campo de semana-->
+                <label for="semanaa" class=" form-label">Semana</label>
+                <input type="week" class="form-control" id="semanaa" name=" semanaa" >
+
+
+            </div>
+            
+            <div class= "mb-3"> <!--URL-->
+                <label for=" url" class="form-label">URL</label>
+                <input type="url" class="form-control" id="url" name="url  " placeholder="Escriba una URL">
+
+
+            </div> 
+
+            <div class= "mb-3"> <!--Este es un campo numerico-->
+                <label for="numericoo" class="form-label">Numero</label>
+                <input type="number" class="form-control" id="numericoo" name="numericoo " placeholder="Ingrese un numero">
+
+
+            </div>
+            <div class= "mb-3"> <!--Este es un campo de rango-->
+                <label for=" rec" class=" form-label">Rango (0 - 50)</label>
+                <input type ="range" class = "form-range" id="rec" name=" rec " min="0" max="50" >
+
+            </div>
+            <div class= "mb-3"> <!--Colores-->
+                <label for=" colores" class=" form-label">Color</label>
+                <input type="color" class="form-control " id=" colores" name="colores" >
+
+
+            </div>
+            <div class= "mb-3"> <!--Campo de contrasena-->
+                <label for=" pass " class=" form-label">Contrasena</label>
+                <input type  = " password" class="form-control "    id = "pass"  name  ="pass"  placeholder =" Ponga una contrasena " >
+
+
+            </div>
+            <div class= "mb-3"> <!--Campo de busqueda-->
+                <label for=" searching " class=" form-label"> Busqueda</label>
+                <input type  = " search" class="form-control " id = "searching" name="searching " placeholder=  " Termino de busqueda" >
+
+
+            </div>
+            <div class= " mb-3"> <!--Archivos-->
+                <label for =" docs " class=" form-label">Archivo</label>
+                <input type= "file" class= "form-control " id =  "docs"  name  ="docs"   >
+
+
+            </div>
+
+            <div class="mb-3">
+                <label  class=" form-label "> Intereses y Preferencias</label><!--Campo de casillas-->
+                <div class   ="form-check">
+                    <input type ="checkbox" class="form-check-input" id ="casilla1" name=" casillas[]" value= "Deportes">
+                    <label class=" form-check-label" for="casilla1"> Deportes  </label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class =" form-check-input" id="casilla2  "  name ="casillas[]" value ="Música">
+                    <label class="form-check-label" for="casilla2">Música</label>
+                </div>
+                <div class = "form-check">
+                    <input type  ="checkbox" class=" form-check-input" id ="casilla3 " name=  "casillas[] "  value="Turismo"  >
+                    <label class ="  form-check-label" for="casilla3">Turismo</label>
+                </div>
+            </div>
+
+            <div  class ="mb-3">
+                <label class  ="form-label"> Su Género</label><!--Campo botones de radio-->
+                <div class ="form-check">
+                    <input type  ="radio" class="form-check-input" id="sugenero1" name="sugenero" value="Masculino">
+                    <label class  ="form-check-label" for  ="sugenero1"> Masculino </label>
+                </div>
+                <div class="form-check">
+                    <input type = "radio" class="form-check-input" id="sugenero2" name="sugenero" value="Femenino">
+                    <label class   ="form-check-label" for="sugenero2">Femenino</label>
+                </div>
+                <div class  ="form-check">
+                    <input type ="radio" class="form-check-input" id="sugenero3" name="sugenero" value="Otro">
+                    <label class ="form-check-label" for  ="sugenero3">Otro</label>
+                </div>
+            </div>
+
+            <input type="hidden" name="oculto" value="valor_oculto">
+
+            
+            <div class = "mb-3"><!-- Selección -->
+                <label for = "supais" class ="form-label">  País </label>
+                <select class  ="form-select" id ="supais" name ="supais">
+                    <option value =""> Seleccione su país</option>
+                    <option value ="España">Ecuador</option>
+                    <option value = "México">México </option>
+                    <option value ="Argentina">Peru </option>
+                    <option value ="Colombia">Colombia  </option>
+                </select>
+            </div>
+
+            <div class = "mb-3"> <!--Area de texto-->
+                <label for  ="comentarios" class="form-label">Sus Comentarios</label>
+                <textarea class ="form-control" id  ="comentarios" name="comentarios" rows="4" placeholder="Escriba sus comentarios o pensamientos"></textarea>
+            </div>
+
+            
+            <div class ="mb-3" > <!-- Botones -->
+                <button type  = "submit" class= "btn btn-primary"> Enviar Fomrmulario </button>
+                <button type ="reset" class ="btn btn-secondary"> Restablecer fomrulario</button>
+                
             </div>
         </form>
     
