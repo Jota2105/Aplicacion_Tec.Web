@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
 </head>
 <body class="container mt-5"> <!--Empezamos con la estructura del formulario-->
-    <h1 class="mb-4" text-center>Factura Comercial</h1>
+    <h1 class="mb-4" text-center>Factura Comercial</h1> <!--Hacemos uso de Bootstrap en nuestros titulos y tablas-->
     <form method="POST" action="factura.php">
         <h2>Datos Del Cliente</h2 >
         <div class="row mb-3">
-            <div class="col-md-6">
+            <div class="col-md-6"> <!--Colocamos lo principal: nombre, correo, fecha, comentario con sus respectivos id-->
                 <label for = "nombree" class="form-label">Nombre Del Cliente</label>
                 <input type = "text" name = "nombree" id = "nombree" class="form-control">
                 <label for= "correoo" class="form-label">Correo Electronico</label>
@@ -29,8 +29,8 @@
             <textarea name = "comentarioss"  id = "comentarioss" class = "form-control"></textarea>
         </div>
 
-        <h2>Inforomacion de Productos</h2>
-        <div class="card mb-3">
+        <h2>Inforomacion de Productos</h2> <!--Hacemos uso de card via Bootstrap y sus col y row-->
+        <div class="card mb-3"> <!--El codigo sera identico en sus tres productos para facilitar su vision y revision-->
             <div class = "card-body">
                 <h5 class = "card-title">Producto 1</h5>
                 <div class = "row">
@@ -57,16 +57,16 @@
                         </select>
                     </div>
                 </div><br>
-                <div>
+                <div><!--Abajo colocamos un input de tipo checkbox parta el tema del IVA-->
                     <input type ="checkbox" name = "iva1" id= "iva1" class="form-check-input">
                     <label for="iva1" class= "form-check-label">Anadir IVA (15%)</label>
                 </div>
             </div>
 
         </div>
-        <div class="card mb-3">
+        <div class="card mb-3"> <!--2-->
             <div class = "card-body">
-                <h5 class = "card-title">Producto 2</h5>
+                <h5 class = "card-title">Producto 2</h5> 
                 <div class = "row">
                     <div class="col-md-4">
                         <label for="articulo2" class="form-label">Nombre del articulo:</label>
@@ -98,7 +98,7 @@
             </div>
 
         </div>
-        <div class="card mb-3">
+        <div class="card mb-3"><!--3-->
             <div class = "card-body">
                 <h5 class = "card-title">Producto 3</h5>
                 <div class = "row">
@@ -131,8 +131,8 @@
                 </div>
             </div>
 
-        </div>
-        <button >Hacer Factura</button>
+        </div> <!--Abajo colocamos el boton para enviar los datos-->
+        <button type = "submit"  class="btn btn-primary">Hacer Factura</button>
 
     </form>
     

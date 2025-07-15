@@ -13,8 +13,8 @@
         $correoo = $_POST['correoo'] ?? '';
         $fechaa = $_POST['fechaa'] ?? '';
         $comentarioss = $_POST['comentarioss'] ?? '';
-        $productos = [];
-        $subtotal_general = 0;
+        $productos = []; // Array para almacenar los productos
+        $subtotal_general = 0; // Para el total
         $iva_general = 0;
 
         function calcular_total_producto($precio, $cantidad, $aplicar_iva){
@@ -31,10 +31,10 @@
             $categoria = $_POST["cat$i"] ?? '';
             $iva_checkbox = isset($_POST["iva$i"]);
 
-            if (!empty($prod_nombre) && $precio > 0 && $cantidad > 0) {
+            if (!empty($prod_nombre) && $precio > 0 && $cantidad > 0) { // Si es valido llama a la funcion que creamos
                 list($subtotal, $iva, $total) = calcular_total_producto($precio, $cantidad, $iva_checkbox);
 
-                $productos[] = [
+                $productos[] = [ // Agregacion al array
                     'nombre' => $prod_nombre,
                     'categoria' => $categoria,
                     'precio' => $precio,
@@ -50,13 +50,45 @@
         }
         $total_pagar = $subtotal_general + $iva_general;
 
-        if (!empty($productos)) {
-        echo '<h2 class="mb-4 text-center">Factura Generada</h2>';
+        if (!empty($productos)) { // Si hay productos validos, muestra la factura
+        echo '<h2 class="mb-4 text-center">Factura Generada</h2>'; // Usamos htmlspedialchars para seguridad contra XSS como en ocasiones anteriores
         echo '<p><strong>Cliente:</strong> ' . htmlspecialchars($nombree) . '</p>';
         echo '<p><strong>Correo:</strong> ' . htmlspecialchars($correoo) . '</p>';
         echo '<p><strong>Fecha:</strong> ' . $fechaa . '</p>';
         echo '<p><strong>Comentarios:</strong> ' . nl2br(htmlspecialchars($comentarioss)) . '</p>';
-        } else {
+        echo '<h3>Detalles de Productos</h3>';
+        echo '<table class="table table-bordered">'; // Usamos tablas responsive via Bootstrap
+        echo '<thead><tr>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>IVA</th>
+                <th>Total</th>
+            </tr></thead>';
+        echo '<tbody>';
+        foreach ($productos as $prod) { // En este foreach $prod toma cada subarray en cada vuelta, es decir, cada producto
+            echo '<tr>';
+            echo '<td>' . htmlspecialchars($prod['nombre']) . '</td>';
+            echo '<td>' . htmlspecialchars($prod['categoria']) . '</td>';
+            echo '<td>$' . number_format($prod['precio']) . '</td>';
+            echo '<td>' . $prod['cantidad'] . '</td>';
+            echo '<td>$' . number_format($prod['subtotal'] ) . '</td>';
+            echo '<td>$' . number_format($prod['iva'], ) . '</td>';
+            echo '<td>$' . number_format($prod['total'] ) . '</td>';
+            echo '</tr>';
+        }
+        echo '</tbody>';
+        echo '<tfoot>';
+        echo '<tr><td colspan="4"><strong>Subtotal General:</strong></td><td colspan="3">$' . number_format($subtotal_general ) . '</td></tr>';
+        echo '<tr><td colspan="4"><strong>Total IVA:</strong></td><td colspan="3">$' . number_format($iva_general ) . '</td></tr>';
+        echo '<tr><td colspan="4"><strong>Total:</strong></td><td colspan="3">$' . number_format($total_pagar) . '</td></tr>';
+        echo '</tfoot>';
+        echo '</table>';
+
+        echo '<a href="index.html" class="btn btn-secondary mt-3">Volver a la factura</a>';
+        } else { // Si no, alerta de error
             echo '<div class="alert alert-warning">Ingrese un producto valido. <a href="index.html">Volver</a></div>';
         }
 
