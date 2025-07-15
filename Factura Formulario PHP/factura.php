@@ -50,6 +50,16 @@
         }
         $total_pagar = $subtotal_general + $iva_general;
 
+        if (!empty($productos)) {
+        echo '<h2 class="mb-4 text-center">Factura Generada</h2>';
+        echo '<p><strong>Cliente:</strong> ' . htmlspecialchars($nombree) . '</p>';
+        echo '<p><strong>Correo:</strong> ' . htmlspecialchars($correoo) . '</p>';
+        echo '<p><strong>Fecha:</strong> ' . $fechaa . '</p>';
+        echo '<p><strong>Comentarios:</strong> ' . nl2br(htmlspecialchars($comentarioss)) . '</p>';
+        } else {
+            echo '<div class="alert alert-warning">Ingrese un producto valido. <a href="index.html">Volver</a></div>';
+        }
+
     } else {
         header('Location: index.html');
         exit;
