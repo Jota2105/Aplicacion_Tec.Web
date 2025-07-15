@@ -72,18 +72,18 @@
             echo '<tr>';
             echo '<td>' . htmlspecialchars($prod['nombre']) . '</td>';
             echo '<td>' . htmlspecialchars($prod['categoria']) . '</td>';
-            echo '<td>$' . number_format($prod['precio']) . '</td>';
+            echo '<td>$' . number_format($prod['precio'], 2) . '</td>';
             echo '<td>' . $prod['cantidad'] . '</td>';
-            echo '<td>$' . number_format($prod['subtotal'] ) . '</td>';
-            echo '<td>$' . number_format($prod['iva'], ) . '</td>';
-            echo '<td>$' . number_format($prod['total'] ) . '</td>';
+            echo '<td>$' . number_format($prod['subtotal'], 2 ) . '</td>';
+            echo '<td>$' . number_format($prod['iva'], 2 ) . '</td>';
+            echo '<td>$' . number_format($prod['total'], 2 ) . '</td>';
             echo '</tr>';
         }
         echo '</tbody>';
         echo '<tfoot>';
-        echo '<tr><td colspan="4"><strong>Subtotal General:</strong></td><td colspan="3">$' . number_format($subtotal_general ) . '</td></tr>';
-        echo '<tr><td colspan="4"><strong>Total IVA:</strong></td><td colspan="3">$' . number_format($iva_general ) . '</td></tr>';
-        echo '<tr><td colspan="4"><strong>Total:</strong></td><td colspan="3">$' . number_format($total_pagar) . '</td></tr>';
+        echo '<tr><td colspan="4"><strong>Subtotal General:</strong></td><td colspan="3">$' . number_format($subtotal_general, 2 ) . '</td></tr>';
+        echo '<tr><td colspan="4"><strong>Total IVA:</strong></td><td colspan="3">$' . number_format($iva_general, 2 ) . '</td></tr>';
+        echo '<tr><td colspan="4"><strong>Total:</strong></td><td colspan="3">$' . number_format($total_pagar, 2) . '</td></tr>';
         echo '</tfoot>';
         echo '</table>';
 
